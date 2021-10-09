@@ -32,8 +32,8 @@ function Navbar(props) {
         }
     }
     return (
-        <nav>
-            <div className="nav-wrapper white">
+        <nav style={{background:"#fff"}}>
+            <div className="nav-wrapper white" style={{maxWidth:'1054px',marginLeft:'auto',marginRight:'auto'}}>
                 <Link to={state ? "/" : "/signin"} className="brand-logo">Let's Mingle</Link>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     {renderList()}
