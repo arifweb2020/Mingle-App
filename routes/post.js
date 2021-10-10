@@ -24,6 +24,21 @@ router.post('/createpost',requireLogin,(req,res)=>{
     })
 })
 
+router.get('/getsubpost',requireLogin,(req,res)=>{
+
+    // if postedBy in following
+    Post.find({postedBy:{$in:req.user.following}})
+    .populate("postedBy","_id name pic")
+    .populate("comments.postedBy","_id name")
+    .sort('-createdAt')
+    .then(posts=>{
+        res.json({posts})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
+
 router.get('/mypost',requireLogin,(req,res)=>{
     Post.find({postedBy:req.user._id})
     .populate("postedBy","_id name")
@@ -37,7 +52,7 @@ router.get('/mypost',requireLogin,(req,res)=>{
 
 router.get('/allpost',requireLogin,(req,res)=>{
     Post.find()
-     .populate("postedBy","_id name")
+     .populate("postedBy","_id name pic")
      .populate("comments.postedBy","_id name")
      .sort('-createdAt')
     .then((posts)=>{
@@ -53,7 +68,8 @@ router.put('/like',requireLogin,(req,res)=>{
     },{
         new:true
     })
-	.populate("comments.postedBy","_id name")
+    .populate("comments.postedBy","_id name")
+	.populate("postedBy","_id name")
 	.exec((err,result)=>{
         if(err){
             return res.status(422).json({error:err})
@@ -69,7 +85,10 @@ router.put('/unlike',requireLogin,(req,res)=>{
         $pull:{likes:req.user._id}
     },{
         new:true
-    }).exec((err,result)=>{
+    })
+	.populate("comments.postedBy","_id name")
+	.populate("postedBy","_id name")
+	.exec((err,result)=>{
         if(err){
             return res.status(422).json({error:err})
         }else{

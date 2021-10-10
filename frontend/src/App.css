@@ -3,6 +3,31 @@
 a{
   color: black !important;
 }
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 10px
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 0px
+}
+
+::-webkit-scrollbar-thumb {
+  background:black;
+ 
+}
+.blue.darken-1 {
+  background-color: #3f51b5 !important;
+  margin-top: 10px;
+}
+.uploadButton{
+  margin-left: 110px !important;
+  margin-top: -20px !important;
+}
+.card .card-image img{
+  height: 350px !important;
+}
 
 .brand-logo,h2{
   font-family: 'Grand Hotel', cursive;
@@ -53,8 +78,34 @@ a{
   right: 20px !important;
   left: auto !important;
 }
-
+.postPicHeader{
+width: 50px;
+    height: 50px;
+    border-radius: 40px;
+}
 
 .material-icons:hover{
   cursor: pointer;
+}
+
+@media only screen and (max-width: 992px){
+nav .brand-logo {
+    left: 16% !important;
+   
+}
+}
+
+@media (max-width:667px){
+  .home{
+    padding: 20px;
+  }
+  .right{
+ 
+      margin-right: 15px !important;
+  
+  }
+  .uploadButton{
+    margin-left: 30px !important;
+ 
+  }
 }

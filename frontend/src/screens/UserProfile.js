@@ -94,7 +94,7 @@ function UserProfile(props) {
                         }}>
                             <div>
                                 <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
-                                    src="https://www.admissioncares.com/images/girl-1.png"
+                                    src={userProfile.user.pic}
                                 />
                             </div>
                             <div>
@@ -147,7 +147,7 @@ function UserProfile(props) {
                         }
                     </div>
                 </div>
-                : <h2>loading...!</h2>
+                : <h2 style={{textAlign:'center',marginTop:'300px'}}>loading...!</h2>
             }
         </>
 

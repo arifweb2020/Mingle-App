@@ -71,17 +71,19 @@ const CretePost = ()=>{
             placeholder="title"
             value={title}
             onChange={(e)=>setTitle(e.target.value)}
+            required
             />
            <input
             type="text"
              placeholder="body"
              value={body}
             onChange={(e)=>setBody(e.target.value)}
+            required
              />
            <div className="file-field input-field">
             <div className="btn #64b5f6 blue darken-1">
                 <span>Uplaod Image</span>
-                <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
+                <input type="file" onChange={(e)=>setImage(e.target.files[0])} required/>
             </div>
             <div className="file-path-wrapper">
                 <input className="file-path validate" type="text" />
