@@ -70,11 +70,11 @@ function Profile(props) {
 
                 }}>
                     <div>
-                        <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
+                        <img className="profilePic"
                             src={state ? state.pic : "loading"}
                         />
                     </div>
-                    <div>
+                    <div className="profileDiv">
                         <h4>{state ? state.name : "loading"}</h4>
                         <h5>{state ? state.email : "loading"}</h5>
                         <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
@@ -98,8 +98,8 @@ function Profile(props) {
                         <span>Update pic</span>
                         <input type="file" onChange={(e) => updatePhoto(e.target.files[0])} />
                     </div>
-                    <div className="file-path-wrapper" style={{width:'100px'}}>
-                        <input className="file-path validate" type="text" style={{borderBottom:'none'}}/>
+                    <div className="file-path-wrapper" style={{ width: '100px' }}>
+                        <input className="file-path validate" type="text" style={{ borderBottom: 'none' }} />
                     </div>
                 </div>
             </div>
