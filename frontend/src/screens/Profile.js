@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { UserContext } from './../App'
+import { UserContext } from './../App';
+import { Link } from 'react-router-dom'
 
 
 function Profile(props) {
@@ -60,62 +61,101 @@ function Profile(props) {
     }, [])
     return (
         <>
-        <div style={{ maxWidth: "750px", margin: "0px auto" }}>
-            <div style={{
-                margin: "18px 0px",
-                borderBottom: "1px solid grey"
-            }}>
+            <div style={{ maxWidth: "750px", margin: "0px auto" }}>
                 <div style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-
+                    margin: "18px 0px",
+                    borderBottom: "1px solid grey"
                 }}>
-                    <div>
-                        <img className="profilePic"
-                            src={state ? state.pic : "loading"}
-                        />
-                    </div>
-                    <div className="profileDiv">
-                        <h4>{state ? state.name : "loading"}</h4>
-                        <h5>{state ? state.email : "loading"}</h5>
-                        <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
-                            <h6>{mypics?.length} posts</h6>
-                            <h6>{state ? state.followers?.length : "0"} followers</h6>
-                            <h6>{state ? state.following?.length : "0"} following</h6>
-                        </div>
+                    <div style={{
+                        display: "flex",
+                        justifyContent: "space-around",
+
+                    }}>
                         <div>
-                            <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                                onClick={() => props.history.push("/followingPost")}
-                            >
-                                Following Post
-                            </button>
+                            <img className="profilePic"
+                                src={state ? state.pic : "loading"}
+                            />
                         </div>
+                        <div className="profileDiv">
+                            <h4>{state ? state.name : "loading"}</h4>
+                            <h5>{state ? state.email : "loading"}</h5>
+                            <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
+                                <h6>{mypics?.length} posts</h6>
+                                <h6>{state ? state.followers?.length : "0"} followers</h6>
+                                <h6>{state ? state.following?.length : "0"} following</h6>
+                            </div>
+                            <div>
+                                <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
+                                    onClick={() => props.history.push("/followingPost")}
+                                >
+                                    Following Post
+                                </button>
+                            </div>
 
+                        </div>
+                    </div>
+
+                    <div className="file-field input-field uploadButton" style={{ margin: "10px" }}>
+                        <div className="btn #64b5f6 blue darken-1">
+                            <span>Update pic</span>
+                            <input type="file" onChange={(e) => updatePhoto(e.target.files[0])} />
+                        </div>
+                        <div className="file-path-wrapper" style={{ width: '100px' }}>
+                            <input className="file-path validate" type="text" style={{ borderBottom: 'none' }} />
+                        </div>
                     </div>
                 </div>
-
-                <div className="file-field input-field uploadButton" style={{ margin: "10px" }}>
-                    <div className="btn #64b5f6 blue darken-1">
-                        <span>Update pic</span>
-                        <input type="file" onChange={(e) => updatePhoto(e.target.files[0])} />
-                    </div>
-                    <div className="file-path-wrapper" style={{ width: '100px' }}>
-                        <input className="file-path validate" type="text" style={{ borderBottom: 'none' }} />
-                    </div>
-                </div>
-            </div>
-            <div className="gallery">
+                {/* <div className="gallery">
                 {
                     mypics.map(item => {
                         return (
-                            <img key={item._id} className="item" src={item.photo} alt={item.title} />
+                            
+                                // <Link to={{ pathname: `/postDetails/${item._id}`, state: { userData: item } }}>
+                                <img key={item._id}
+                                onClick={()=>props.history.push({ pathname: `/postDetails/${item._id}`, state: { userData: item } })}
+                                 className="item"
+                                  src={item.photo} 
+                                  alt={item.title} />
                         )
                     })
                 }
+            </div> */}
+
+                <div class="row">
+                    {
+                        mypics.map(item => {
+                            return (
+                                // <Link to={{ pathname: `/postDetails/${item._id}`, state: { userData: item } }}>
+                                <div className="col s12 m4" key={item._id}>
+                                    <div className="card">
+                                        <div className="card-image waves-effect waves-block waves-light">
+                                            <img key={item._id}
+                                                onClick={() => props.history.push({ pathname: `/postDetails/${item._id}`, state: { userData: item } })}
+                                                className="item"
+                                                src={item.photo}
+                                                alt={item.title} />
+                                        </div>
+                                        <div className="card-action ">
+                                            <div className="col s6 m6">
+                                            <span><i className="material-icons">thumb_up</i> {item.likes?.length}</span>
+                                            </div>
+                                            <div className="col s6 m6">
+                                            <span><i className="material-icons">chat_bubble_outline</i> {item.comments?.length} </span>
+                                            </div>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+
+
+                </div>
+
+
             </div>
-            
-        </div>
-        <p className="mTop" ><i class="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
+            <p className="mTop" ><i className="material-icons" onClick={() => window.scroll(0, 0)} title="move top" style={{ fontSize: '30px' }}>arrow_upward</i></p>
         </>
     );
 }

@@ -137,17 +137,38 @@ function UserProfile(props) {
             </div>
             </div> */}
                     </div>
-                    <div className="gallery">
+                    <div class="row">
                         {
                             userProfile.posts.map(item => {
                                 return (
-                                    <img key={item._id} className="item" src={item.photo} alt={item.title} />
+
+                                    <div className="col s12 m4" key={item._id}>
+                                        <div className="card">
+                                            <div className="card-image waves-effect waves-block waves-light">
+                                                <img key={item._id}
+                                                    className="item"
+                                                    src={item.photo}
+                                                    alt={item.title}
+                                                    onClick={() => props.history.push({ pathname: `/postDetails/${item._id}`, state: { userData: item } })}
+                                                />
+                                            </div>
+                                            <div className="card-action ">
+                                            <div className="col s6 m6">
+                                            <span><i className="material-icons">thumb_up</i> {item.likes?.length}</span>
+                                            </div>
+                                            <div className="col s6 m6">
+                                            <span><i className="material-icons">chat_bubble_outline</i> {item.comments?.length} </span>
+                                            </div>
+                            
+                                        </div>
+                                        </div>
+                                    </div>
                                 )
                             })
                         }
                     </div>
                 </div>
-                : <h2 style={{textAlign:'center',marginTop:'300px'}}>loading...!</h2>
+                : <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
             }
         </>
 

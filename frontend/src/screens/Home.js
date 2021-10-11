@@ -180,7 +180,7 @@ function Home(props) {
                             )
                         })
                     }
-                    <p className="mTop" ><i class="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
+                    <p className="mTop" ><i className="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
                 </div>
                 : <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
             }
