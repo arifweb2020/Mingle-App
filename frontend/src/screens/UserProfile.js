@@ -93,11 +93,11 @@ function UserProfile(props) {
 
                         }}>
                             <div>
-                                <img style={{ width: "160px", height: "160px", borderRadius: "80px" }}
+                                <img className="profilePic"
                                     src={userProfile.user.pic}
                                 />
                             </div>
-                            <div>
+                            <div className="profileDiv">
                                 <h4>{userProfile.user.name}</h4>
                                 <h5>{userProfile.user.email}</h5>
                                 <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>

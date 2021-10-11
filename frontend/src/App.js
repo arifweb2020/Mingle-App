@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar';
 import CreatePost from './screens/CreatePost';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 import SignIn from './screens/SignIn';

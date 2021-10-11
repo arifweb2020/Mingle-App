@@ -119,15 +119,15 @@ function Home(props) {
                             return (
                                 <div className="card home-card" key={item._id}>
                                     <h5 style={{ padding: "5px" }}><Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>
-                                    <img src={item.postedBy.pic} className="postPicHeader"/>  <span style={{position:'relative',top:'-20px'}}> {item.postedBy.name}</span>  </Link>
-                                     {item.postedBy._id == state._id
-                                        && <i className="material-icons" style={{
-                                            float: "right"
-                                        }}
-                                            onClick={() => deletePost(item._id)}
-                                        >delete</i>
+                                        <img src={item.postedBy.pic} className="postPicHeader" />  <span style={{ position: 'relative', top: '-20px' , color:'#ff0000e0'}}> {item.postedBy.name}</span>  </Link>
+                                        {item.postedBy._id == state._id
+                                            && <i className="material-icons" style={{
+                                                float: "right"
+                                            }}
+                                                onClick={() => deletePost(item._id)}
+                                            >delete</i>
 
-                                    }</h5>
+                                        }</h5>
                                     <div className="card-image">
                                         <img src={item.photo} />
                                     </div>
@@ -143,16 +143,24 @@ function Home(props) {
                                                 onClick={() => { likePost(item._id) }}
                                             >thumb_up</i>
                                         }
-                                        <h6>{item.likes.length} likes</h6>
-                                        <h6>{item.title}</h6>
-                                        <p>{item.body}</p>
-                                        {
-                                            item.comments.map(record => {
-                                                return (
-                                                    <h6 key={record._id}><span style={{ fontWeight: "500" }}>{record.postedBy.name}</span> {record.text}</h6>
-                                                )
-                                            })
-                                        }
+                                        <h6>{item.likes.length} <span style={{fontWeight:'bold',color:'#4caf50'}}>likes</span></h6>
+                                        <h6 style={{color: '#3f51b5'}}><b>{item.title}</b></h6>
+                                        <p className="bodyText">{item.body}</p>
+                                        <p style={{marginTop:'10px'}}><span style={{color:'#9c27b0',fontWeight:'bold'}}>Total Comments </span>: {item.comments.length}</p>
+                                        <div className="commentBox" >
+                                            {
+                                                item.comments.map(record => {
+                                                    return (
+
+                                                        <h6 key={record._id}>
+                                                            <span style={{ fontWeight: "500" , color:"#ff0000e0" }}>
+                                                                {record.postedBy.name}</span> : {record.text}
+                                                        </h6>
+
+                                                    )
+                                                })
+                                            }
+                                        </div>
 
                                         <form onSubmit={(e) => {
                                             e.preventDefault()
