@@ -96,6 +96,12 @@ a{
   height:160px;
   border-radius: 80px;
 }
+.developer{
+  text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: cursive;
+}
 #toast-container{
   top:30px !important;
   right: 20px !important;

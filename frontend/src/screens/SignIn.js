@@ -73,13 +73,13 @@ function SignIn(props) {
                 <h2>Let's Mingle</h2>
                 <input
                     type="text"
-                    placeholder="email"
+                    placeholder="enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                     type="password"
-                    placeholder="password"
+                    placeholder="enter your password"
                     value={password}
                     onChange={(e) => setPasword(e.target.value)}
                 />
@@ -104,6 +104,7 @@ function SignIn(props) {
                 closeOnClick={true}
                 rtl={false}
             />
+            <h6 className="developer">Made By <i class="material-icons" style={{color:'red',position:'relative',top:'5px'}}>favorite</i> Arif Hussain</h6>
         </div>
     );
 }

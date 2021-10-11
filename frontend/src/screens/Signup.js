@@ -102,19 +102,19 @@ const Signup = () => {
                 <h2>Let's Mingle</h2>
                 <input
                     type="text"
-                    placeholder="name"
+                    placeholder="enter your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
                     type="text"
-                    placeholder="email"
+                    placeholder="enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                     type="password"
-                    placeholder="password"
+                    placeholder="enter your password"
                     value={password}
                     onChange={(e) => setPasword(e.target.value)}
                 />
@@ -135,12 +135,8 @@ const Signup = () => {
                 <h5>
                     <Link to="/signin">Already have an account ?</Link>
                 </h5>
-
-
-
-
-
             </div>
+            <h6 className="developer">Made By <i class="material-icons" style={{color:'red',position:'relative',top:'5px'}}>favorite</i> Arif Hussain</h6>
         </div>
     )
 }
