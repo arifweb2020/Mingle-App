@@ -153,7 +153,10 @@ const SubscribesUserPosts  = ()=>{
                                 {
                                     item.comments.map(record=>{
                                         return(
-                                        <h6 key={record._id}><span style={{fontWeight:"500",color:"#ff0000e0"}}>{record.postedBy.name}</span> : <span style={{fontSize:'15px'}}>{record.text}</span></h6>
+                                            <h6 key={record._id}>
+                                            <img src={record.postedBy.pic} className="postPicHeader"/>
+                                                 <span className="pcom" style={{fontSize:'15px'}}>{record.text}</span>
+                                        </h6>
                                         )
                                     })
                                 }
