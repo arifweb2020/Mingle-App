@@ -1,6 +1,8 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from './../App'
 import {Link} from 'react-router-dom'
+import moment from "moment";
+
 const SubscribesUserPosts  = ()=>{
     const [data,setData] = useState([])
     const {state,dispatch} = useContext(UserContext)
@@ -116,7 +118,8 @@ const SubscribesUserPosts  = ()=>{
                    return(
                        <div className="card home-card" key={item._id}>
                             <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>
-                            <img src={item.postedBy.pic} className="postPicHeader"/>  <span style={{position:'relative',top:'-20px' ,color:'#ff0000e0'}}> {item.postedBy.name}</span></Link> 
+                            <img src={item.postedBy.pic} className="postPicHeader"/>  <span style={{position:'relative',top:'-20px' ,color:'#ff0000e0', textTransform:'capitalize'}}> {item.postedBy.name},</span></Link>
+                            <span className="date_time">{moment(item.createdAt).format("ll HH:mm A")}</span> 
                                 {item.postedBy._id == state._id 
                             && <i className="material-icons" style={{
                                 float:"right"
@@ -143,14 +146,14 @@ const SubscribesUserPosts  = ()=>{
                             
                            
                                 <h6>{item.likes.length} <span style={{fontWeight:'bold',color:'#4caf50'}}>likes</span></h6>
-                                <h6 style={{color: '#3f51b5'}}><b>{item.title}</b></h6>
+                                <h6 style={{color: '#3f51b5',textTransform:'capitalize'}}><b>{item.title}</b></h6>
                                 <p className="bodyText">{item.body}</p>
                                 <p style={{marginTop:'10px'}}><span style={{color:'#9c27b0',fontWeight:'bold'}}>Total Comments </span> : {item.comments.length}</p>
                                 <div className="commentBox" >
                                 {
                                     item.comments.map(record=>{
                                         return(
-                                        <h6 key={record._id}><span style={{fontWeight:"500",color:"#ff0000e0"}}>{record.postedBy.name}</span> {record.text}</h6>
+                                        <h6 key={record._id}><span style={{fontWeight:"500",color:"#ff0000e0"}}>{record.postedBy.name}</span> : <span style={{fontSize:'15px'}}>{record.text}</span></h6>
                                         )
                                     })
                                 }
@@ -167,7 +170,7 @@ const SubscribesUserPosts  = ()=>{
                    )
                })
            }
-          
+          <p className="mTop" ><i class="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
           
        </div>
    )

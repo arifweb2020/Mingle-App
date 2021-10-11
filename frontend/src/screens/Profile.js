@@ -59,6 +59,7 @@ function Profile(props) {
             })
     }, [])
     return (
+        <>
         <div style={{ maxWidth: "750px", margin: "0px auto" }}>
             <div style={{
                 margin: "18px 0px",
@@ -112,7 +113,10 @@ function Profile(props) {
                     })
                 }
             </div>
+            
         </div>
+        <p className="mTop" ><i class="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
+        </>
     );
 }
 

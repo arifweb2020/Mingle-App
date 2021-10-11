@@ -11,6 +11,7 @@ import Signup from './screens/Signup';
 import { reducer, initialState } from './reducers/userReducers'
 import UserProfile from './screens/UserProfile';
 import SubscribesUserPosts from './screens/SubscribesUserPosts';
+import Footer from './components/Footer';
 
 export const UserContext = createContext()
 
@@ -47,6 +48,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routing />
+        {/* <Footer/> */}
       </BrowserRouter>
     </UserContext.Provider>
   );

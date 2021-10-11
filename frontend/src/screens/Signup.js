@@ -59,8 +59,8 @@ const Signup = () => {
         }).then(res => res.json())
             .then(data => {
                 if (data.error) {
-                    // M.toast({html: data.error,classes:"#c62828 red darken-3"})
-                    toast.error("enter all field", {
+                     //M.toast({html: data.error,classes:"#c62828 red darken-3"})
+                    toast.error("email exit or enter password", {
                         position: "bottom-right",
                         autoClose: 3000,
                         hideProgressBar: false,
@@ -136,7 +136,15 @@ const Signup = () => {
                     <Link to="/signin">Already have an account ?</Link>
                 </h5>
             </div>
-            <h6 className="developer">Made By <i class="material-icons" style={{color:'red',position:'relative',top:'5px'}}>favorite</i> Arif Hussain</h6>
+            <h6 className="developer">Made By <i class="material-icons" style={{ color: 'red', position: 'relative', top: '5px' }}>favorite</i> Arif Hussain</h6>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick={true}
+                rtl={false}
+            />
         </div>
     )
 }
