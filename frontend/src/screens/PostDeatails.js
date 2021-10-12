@@ -5,12 +5,12 @@ function PostDeatails(props) {
     const { photo, body, comments, likes, title, postedBy } = props.location.state.userData
 
     return (
-        <div className="container" style={{ marginTop: '50px' }}>
+        <div className="container" style={{ marginTop: '10px' }}>
             <div className="row">
                 <p><i className="material-icons pdi" onClick={() => props.history.goBack()}>arrow_back</i></p>
                 <div className="row">
-                    <div className="col s3 m2"><img src={postedBy.pic} className="postPicHeader" /></div>
-                    <div className="col s9 m10"><span style={{ fontSize: '15px', textTransform: 'capitalize' }}>{title}</span></div>
+                    <div className="col s3 m1"><img src={postedBy.pic} className="postPicHeader" /></div>
+                    <div className="col s9 m11"><span style={{ fontSize: '15px', textTransform: 'capitalize' }}>{title}</span></div>
                 </div>
                
             <div className="col s12 m6">
