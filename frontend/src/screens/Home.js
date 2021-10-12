@@ -158,10 +158,11 @@ function Home(props) {
                                                 item.comments.map(record => {
                                                     return (
 
-                                                        <h6 key={record._id}>
-                                                            <img src={record.postedBy.pic} className="postPicHeader"/>
-                                                                 <span className="pcom" style={{fontSize:'15px'}}>{record.text}</span>
-                                                        </h6>
+                                                        <div className="row" style={{marginTop:'15px'}} key={record._id}>
+                                                            <div className="col s3 m2"><img src={record.postedBy.pic} className="postPicHeader"/></div>
+                                                            <div className="col s9 m10"><span style={{fontSize:'15px'}}>{record.text}</span></div>
+                                                                 
+                                                        </div>
 
                                                     )
                                                 })
