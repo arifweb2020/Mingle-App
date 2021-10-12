@@ -118,7 +118,7 @@ const SubscribesUserPosts  = ()=>{
                    return(
                        <div className="card home-card" key={item._id}>
                             <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>
-                            <img src={item.postedBy.pic} className="postPicHeader"/>  <span style={{position:'relative',top:'-20px' ,color:'#ff0000e0', textTransform:'capitalize'}}> {item.postedBy.name},</span></Link>
+                            <img src={item.postedBy.pic} className="postPicHeader"/>  <span style={{position:'relative',top:'-20px', textTransform:'capitalize'}}> {item.postedBy.name}</span></Link>
                             <span className="date_time">{moment(item.createdAt).format("ll HH:mm A")}</span> 
                                 {item.postedBy._id == state._id 
                             && <i className="material-icons" style={{
