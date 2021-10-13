@@ -27,21 +27,21 @@ const CretePost = () => {
 
                     if (data.error) {
                         // M.toast({html: data.error,classes:"#c62828 red darken-3"})
-                        toast.error("all fields are requuired", {
-                            position: "bottom-right",
-                            autoClose: 3000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            progress: undefined,
-                            pauseOnHover: false,
-                        })
+                        // toast.error("all fields are required", {
+                        //     position: "bottom-right",
+                        //     autoClose: 3000,
+                        //     hideProgressBar: false,
+                        //     closeOnClick: true,
+                        //     progress: undefined,
+                        //     pauseOnHover: false,
+                        // })
                     }
                     else {
                         //M.toast({html:"Created post Successfully",classes:"#43a047 green darken-1"})
                         setTimeout(() => {
                             history.push("/")
                         }, 2000);
-                        toast.success("Created post Successfully", {
+                        toast.success("your post created successfully", {
                             position: "bottom-right",
                             autoClose: 2000,
                             hideProgressBar: false,
@@ -68,6 +68,16 @@ const CretePost = () => {
             .then(res => res.json())
             .then(data => {
                 setUrl(data.url)
+                toast.error("all fields are required", {
+                    position: "bottom-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    progress: undefined,
+                    pauseOnHover: false,
+                })
+                
+
             })
             .catch(err => {
                 console.log(err)
@@ -92,19 +102,19 @@ const CretePost = () => {
                     placeholder="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    required
+
                 />
                 <input
                     type="text"
                     placeholder="body"
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
-                    required
+
                 />
                 <div className="file-field input-field">
                     <div className="btn #64b5f6 blue darken-1">
                         <span>Uplaod Image</span>
-                        <input type="file" onChange={(e) => setImage(e.target.files[0])} required />
+                        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                     </div>
                     <div className="file-path-wrapper">
                         <input className="file-path validate" type="text" />
