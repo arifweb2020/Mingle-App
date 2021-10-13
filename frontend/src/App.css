@@ -281,4 +281,7 @@ nav .brand-logo {
   .searchUser{
     margin-top: 0px;
   }
+  .searchUser > h5{
+font-size: 18px;
+  }
 }

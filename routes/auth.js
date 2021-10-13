@@ -362,7 +362,7 @@ router.post('/new-password',(req,res)=>{
            user.resetToken = undefined
            user.expireToken = undefined
            user.save().then((saveduser)=>{
-               res.json({message:"password updated success"})
+               res.json({message:"password updated successfully"})
            })
         })
     }).catch(err=>{
