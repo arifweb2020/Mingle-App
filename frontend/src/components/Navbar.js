@@ -69,6 +69,7 @@ function Navbar(props) {
     }
 
     return (
+        <div className="navbar-fixed">
         <nav style={{ background: "#fff" }}>
             <div className="nav-wrapper white" style={{ maxWidth: '1054px', marginLeft: 'auto', marginRight: 'auto' }}>
                 <Link to={state ? "/" : "/signin"} className="brand-logo">Let's Mingle</Link>
@@ -106,6 +107,7 @@ function Navbar(props) {
                 </div>
             </div>
         </nav>
+        </div>
     );
 }
 
