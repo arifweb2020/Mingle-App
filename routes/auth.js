@@ -336,7 +336,7 @@ router.post('/reset-password',(req,res)=>{
 								to:user.email,
 								from:"admin@skyfillconsulting.com",
 								subject:"Reset Your Password",
-								html:`<h5>reset your password</h5>
+								html:`<h2>reset your Let's Mingle password</h2>
 								<p>click to this <a href="${EMAIL}/reset-password/${token}"> click here </a> to reset your password</p>
 								`
 								
