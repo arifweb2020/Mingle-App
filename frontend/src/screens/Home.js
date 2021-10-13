@@ -123,7 +123,7 @@ function Home(props) {
 
                                     {/* {moment(tip.createdAt).format("Do MMM")} */}
                                     <h5 style={{ padding: "5px" }}><Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>
-                                        <img src={item.postedBy.pic} className="postPicHeader" />  <span style={{ position: 'relative', top: '-20px', textTransform:'capitalize'}}> {item.postedBy.name} </span>  </Link>
+                                        <img src={item.postedBy.pic} className="postPicHeader" />  <span style={{ position: 'relative', top: '-20px', textTransform: 'capitalize' }}> {item.postedBy.name} </span>  </Link>
                                         <span className="date_time">{moment(item.createdAt).format("ll HH:mm A")}</span>
                                         {item.postedBy._id == state._id
                                             && <i className="material-icons" style={{
@@ -150,20 +150,17 @@ function Home(props) {
                                             >thumb_up</i>
                                         }
                                         <h6>{item.likes.length} <span style={{ fontWeight: 'bold', color: '#4caf50' }}>likes</span></h6>
-                                        <h6 style={{ color: '#3f51b5',textTransform:'capitalize' }}><b>{item.title}</b></h6>
+                                        <h6 style={{ color: '#3f51b5', textTransform: 'capitalize' }}><b>{item.title}</b></h6>
                                         <p className="bodyText">{item.body}</p>
                                         <p style={{ marginTop: '10px' }}><span style={{ color: '#9c27b0', fontWeight: 'bold' }}>Total Comments </span>: {item.comments.length}</p>
                                         <div className="commentBox" >
                                             {
                                                 item.comments.map(record => {
                                                     return (
-
-                                                        <div className="row" style={{marginTop:'15px'}} key={record._id}>
-                                                            <div className="col s3 m2"><img src={record.postedBy.pic} className="postPicHeader"/></div>
-                                                            <div className="col s9 m10"><span style={{fontSize:'15px'}}>{record.text}</span></div>
-                                                                 
+                                                        <div className="row" style={{ marginTop: '15px' }} key={record._id}>
+                                                            <div className="col s3 m2"><img src={record.postedBy.pic} className="postPicHeader" /></div>
+                                                            <div className="col s9 m10"><span style={{ fontSize: '15px' }}>{record.text}</span></div>
                                                         </div>
-
                                                     )
                                                 })
                                             }
@@ -181,7 +178,7 @@ function Home(props) {
                             )
                         })
                     }
-                    <p className="mTop" ><i className="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
+                    <p className="mTop" ><i className="material-icons" onClick={() => window.scroll(0, 0)} title="move top" style={{ fontSize: '30px' }}>arrow_upward</i></p>
                 </div>
                 : <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
             }

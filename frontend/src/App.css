@@ -93,7 +93,28 @@ a{
 /* .card .card-image img{
   height: 350px !important;
 } */
-
+.myModal{
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.searchUser{
+ margin-top: -5px;
+ text-transform: capitalize;
+}
+.collection-item {
+  margin-top: 13px !important;
+  margin-bottom: 1px !important;
+  /* margin-top: -6px; */
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  /* margin: 0; */
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+.collection-item:last-child {
+  border-bottom: block !important;
+}
 .brand-logo,h2{
   font-family: 'Grand Hotel', cursive;
 }
@@ -256,5 +277,8 @@ nav .brand-logo {
   }
   .pdh{
     font-size: 18px;
+  }
+  .searchUser{
+    margin-top: 0px;
   }
 }

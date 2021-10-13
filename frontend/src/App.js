@@ -13,6 +13,8 @@ import UserProfile from './screens/UserProfile';
 import SubscribesUserPosts from './screens/SubscribesUserPosts';
 import Footer from './components/Footer';
 import PostDeatails from './screens/PostDeatails';
+import Reset from './screens/Reset';
+import NewPassword from './screens/NewPassword';
 
 export const UserContext = createContext()
 
@@ -25,7 +27,7 @@ const Routing = () => {
       dispatch({ type: "USER", payload: user })
       //history.push('/')
     } else {
-      //  if(!history.location.pathname.startsWith('/reset'))
+      if(!history.location.pathname.startsWith('/reset-password'))
       history.push('/signin')
     }
   }, [])
@@ -39,6 +41,8 @@ const Routing = () => {
       <Route path="/profile/:userid" component={UserProfile} />
       <Route path="/postDetails/:id" component={PostDeatails} />
       <Route path="/followingPost" component={SubscribesUserPosts} />
+      <Route exact path="/reset-password" component={Reset} />
+	  <Route path="/reset-password/:token" component={NewPassword} />
     </Switch>
   )
 }
