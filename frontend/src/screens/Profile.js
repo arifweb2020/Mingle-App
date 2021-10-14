@@ -7,6 +7,7 @@ function Profile(props) {
     const [mypics, setPics] = useState([])
     const { state, dispatch } = useContext(UserContext)
     const [image, setImage] = useState("")
+    const[loader,setLoader]=useState(true);
 
     useEffect(() => {
         if (image) {
@@ -57,8 +58,11 @@ function Profile(props) {
             .then(result => {
                 console.log(result)
                 setPics(result.mypost)
+                setLoader(false);
             })
     }, [])
+    if(loader) return <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
+
     return (
         <>
             <div style={{ maxWidth: "750px", margin: "0px auto" }}>
@@ -149,11 +153,7 @@ function Profile(props) {
                             )
                         })
                     }
-
-
                 </div>
-
-
             </div>
             <p className="mTop" ><i className="material-icons" onClick={() => window.scroll(0, 0)} title="move top" style={{ fontSize: '30px' }}>arrow_upward</i></p>
         </>

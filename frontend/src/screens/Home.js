@@ -2,10 +2,12 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from './../App'
 import moment from "moment";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Home(props) {
     const [data, setData] = useState([])
     const { state, dispatch } = useContext(UserContext)
+    const[loader,setLoader]=useState(true);
     useEffect(() => {
         fetch('/allpost', {
             headers: {
@@ -15,6 +17,7 @@ function Home(props) {
             .then(result => {
                 //console.log(result)
                 setData(result.posts)
+                setLoader(false);
             })
     }, [])
 
@@ -108,13 +111,22 @@ function Home(props) {
                 const newData = data.filter(item => {
                     return item._id !== result._id
                 })
+                toast.success("your post deleted successfully", {
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    progress: undefined,
+                    pauseOnHover: false,
+                })
                 setData(newData)
             })
     }
 
+    if(loader) return <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
+
     return (
         <>
-            {data ?
                 <div className="home">
                     {
                         data.map(item => {
@@ -180,8 +192,16 @@ function Home(props) {
                     }
                     <p className="mTop" ><i className="material-icons" onClick={() => window.scroll(0, 0)} title="move top" style={{ fontSize: '30px' }}>arrow_upward</i></p>
                 </div>
-                : <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
-            }
+                
+            
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick={true}
+                rtl={false}
+            />
         </>
 
     );
