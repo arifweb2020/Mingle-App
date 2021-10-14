@@ -21,6 +21,11 @@ a{
   min-height: 10px;
   max-height: 120px;
 }
+.postPicHeader:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+  transition: transform 125ms;
+}
 .commentBox::-webkit-scrollbar {
   width: 4px !important;
 }

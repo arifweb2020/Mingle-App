@@ -168,7 +168,7 @@ function UserProfile(props) {
                         }
                     </div>
                 </div>
-                : <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
+                : <h2 style={{ textAlign: 'center', marginTop: '220px', fontSize:'30px' }}>loading...!</h2>
             }
         </>
 

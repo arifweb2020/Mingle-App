@@ -123,7 +123,7 @@ function Home(props) {
             })
     }
 
-    if(loader) return <h2 style={{ textAlign: 'center', marginTop: '300px' }}>loading...!</h2>
+    if(loader) return <h2 style={{ textAlign: 'center', marginTop: '220px', fontSize:'30px' }}>loading...!</h2>
 
     return (
         <>
