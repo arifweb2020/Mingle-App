@@ -2,28 +2,24 @@
   scroll-behavior: smooth;
 }
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
-
 a{
   color: black !important;
 }
 ::-webkit-scrollbar {
   width: 12px;
-  border-radius: 10px
+  border-radius: 10px 
 }
-
 ::-webkit-scrollbar-track {
   background: #fff;
-  border-radius: 0px
+  border-radius: 0px 
 }
-
 ::-webkit-scrollbar-thumb {
   background:black;
- 
 }
 .commentBox{
   overflow-y: auto;
-    min-height: 10px;
-    max-height: 120px;
+  min-height: 10px;
+  max-height: 120px;
 }
 .commentBox::-webkit-scrollbar {
   width: 4px !important;
@@ -43,7 +39,8 @@ a{
 .pdh{
   position: relative;
   margin-left: 10px;
-  /* margin-top: -20px; */
+ /* margin-top: -20px;
+  */
   top: -17px;
 }
 .postCard{
@@ -51,10 +48,10 @@ a{
 }
 .paraBody{
   overflow-y: auto;
-    margin-top: 20px;
-    min-height: 10px;
-    max-height: 89px;
-    padding: 6px;
+  margin-top: 20px;
+  min-height: 10px;
+  max-height: 89px;
+  padding: 6px;
 }
 .paraBody::-webkit-scrollbar {
   width: 4px !important;
@@ -66,9 +63,9 @@ a{
   margin-top: 20px !important;
   overflow-y: auto;
   overflow-x: hidden;
-    margin-top: 20px;
-    min-height: 200px;
-    max-height: 206px;
+  margin-top: 20px;
+  min-height: 200px;
+  max-height: 206px;
 }
 .pdImg{
   height: 423px;
@@ -78,9 +75,9 @@ a{
 }
 .pcom{
   position: relative;
-    left: 20px;
-    margin-top: 14px;
-    top: -20px;
+  left: 20px;
+  margin-top: 14px;
+  top: -20px;
 }
 .blue.darken-1 {
   background-color: #3f51b5 !important;
@@ -92,24 +89,27 @@ a{
 }
 /* .card .card-image img{
   height: 350px !important;
-} */
+}
+*/
 .myModal{
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 .searchUser{
- margin-top: -5px;
- text-transform: capitalize;
+  margin-top: -5px;
+  text-transform: capitalize;
 }
 .collection-item {
   margin-top: 13px !important;
   margin-bottom: 1px !important;
-  /* margin-top: -6px; */
+ /* margin-top: -6px;
+  */
   background-color: #fff;
   line-height: 1.5rem;
   padding: 10px 20px;
-  /* margin: 0; */
+ /* margin: 0;
+  */
   border-bottom: 1px solid #e0e0e0 !important;
 }
 .collection-item:last-child {
@@ -118,7 +118,6 @@ a{
 .brand-logo,h2{
   font-family: 'Grand Hotel', cursive;
 }
-
 .mycard{
   margin-top: 30px;
 }
@@ -128,16 +127,14 @@ a{
   max-width: 400px;
   margin: 10px auto;
 }
-
 .input-field input[type=text]:focus {
   border-bottom: 1px solid rgb(8, 93, 252) !important;
-  box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252) !important;
 }
 .input-field input[type=password]:focus {
   border-bottom: 1px solid rgb(8, 93, 252) !important;
-  box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252) !important;
 }
-
 .gallery{
   display: flex;
   flex-wrap: wrap;
@@ -148,22 +145,18 @@ a{
   height: 60px;
 }
 .item{
- 
   max-height: 190px;
   height: 187px;
   cursor: pointer;
 }
-
 .home-card{
   max-width: 500px;
   height: max-content;
   margin: 50px auto;
-  
 }
 .collection-item{
   width: 100%;
 }
-
 .profilePic{
   width:160px;
   height:160px;
@@ -171,18 +164,18 @@ a{
 }
 .date_time{
   position: absolute;
-    left: 39%;
-    top: -18px;
-    font-size: 11px;
-    background: #101012;
-    padding: 5px;
-    color: #fff;
+  left: 39%;
+  top: -18px;
+  font-size: 11px;
+  background: #101012;
+  padding: 5px;
+  color: #fff;
 }
 .developer{
   text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-    font-family: cursive;
+  margin-top: 20px;
+  font-weight: bold;
+  font-family: cursive;
 }
 #toast-container{
   top:30px !important;
@@ -190,16 +183,14 @@ a{
   left: auto !important;
 }
 .postPicHeader{
-width: 50px;
-    height: 50px;
-    border-radius: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
 }
-
 .material-icons:hover{
   cursor: pointer;
 }
 .footer-copyright{
-
   background-color:#fff!important;
   color: black;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
@@ -212,7 +203,7 @@ width: 50px;
   font-weight: bold;
 }
 .page-footer{
-  background-color: #fff !important;  
+  background-color: #fff !important;
 }
 .close{
   display: flex;
@@ -222,69 +213,63 @@ width: 50px;
 .cp{
   color: black;
 }
-
 @media only screen and (max-width: 992px){
-nav .brand-logo {
-    left: 19% !important;
-   
+  nav .brand-logo {
+      left: 19% !important;
+ }
 }
-}
-
 @media (max-width:667px){
   .home{
-    padding: 20px;
-  }
+      padding: 20px;
+ }
   .right{
- 
       margin-right: 15px !important;
-  
-  }
+ }
   .uploadButton{
-    margin-left: 30px !important;
- 
-  }
+      margin-left: 30px !important;
+ }
   .profilePic{
-    width:100px;
-    height:100px;
-    border-radius: 50px;
-    margin-top: 30px;
-  }
+      width:100px;
+      height:100px;
+      border-radius: 50px;
+      margin-top: 30px;
+ }
   .item{
-    height: 200px;
-    cursor: pointer;
-  }
+      height: 200px;
+      cursor: pointer;
+ }
   .pdImg {
-    height: 277px;
-}
+      height: 277px;
+ }
   .blue.darken-1 {
-    font-size: 10px;
-  }
+      font-size: 10px;
+ }
   .profileDiv{
-    margin-right: 10px;
-  }
+      margin-right: 10px;
+ }
   .myCard{
-    padding: 20px !important;
-  }
+      padding: 20px !important;
+ }
   .mycard{
-    padding: 20px !important;
-  }
+      padding: 20px !important;
+ }
   .profileDiv > h4{
-    font-size: 22px;
-  }
+      font-size: 22px;
+ }
   .profileDiv > h5{
-    font-size: 18px;
-  }
+      font-size: 18px;
+ }
   .date_time{
-    left: 35%;
-    top: -24px;
-  }
+      left: 35%;
+      top: -24px;
+ }
   .pdh{
-    font-size: 18px;
-  }
+      font-size: 18px;
+ }
   .searchUser{
-    margin-top: 0px;
-  }
+      margin-top: 0px;
+ }
   .searchUser > h5{
-font-size: 18px;
-  }
+      font-size: 18px;
+ }
 }

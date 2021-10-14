@@ -55,7 +55,7 @@ function Profile(props) {
             }
         }).then(res => res.json())
             .then(result => {
-                //console.log(result)
+                console.log(result)
                 setPics(result.mypost)
             })
     }, [])
