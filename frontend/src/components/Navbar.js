@@ -70,43 +70,47 @@ function Navbar(props) {
 
     return (
         <div className="navbar-fixed">
-        <nav style={{ background: "#fff" }}>
-            <div className="nav-wrapper white" style={{ maxWidth: '1054px', marginLeft: 'auto', marginRight: 'auto' }}>
-                <Link to={state ? "/" : "/signin"} className="brand-logo">Let's Mingle</Link>
-                <ul id="nav-mobile" className="right">
-                    {renderList()}
-                </ul>
-            </div>
-            <div id="modal1" className="modal myModal" ref={searchModal} style={{ color: "black" }}>
-                <div className="modal-content " style={{ background: '#fff' }}>
-                    <input
-                        type="text"
-                        placeholder="search users"
-                        value={search}
-                        onChange={(e) => fetchUsers(e.target.value)}
-                    />
-                    <ul className="collection">
-                        {userDetails.map(item => {
-                            return <a href={item._id !== state._id ? "/profile/" + item._id : '/profile'} onClick={() => {
-                                M.Modal.getInstance(searchModal.current).close()
-                                setSearch('')
-                            }}><li className="collection-item">
-                                    <div className="row" key={item._id}>
-                                        <div className="col s5 m3"><img src={item.pic} className="postPicHeader" /></div>
-                                        <div className="col s7 m9 searchUser"><h5>{item.name}</h5></div>
-                                    </div>
-                                </li>
-                                {/* <div style={{border:'2px solid red'}}></div> */}
-                            </a>
-                        })}
-
+            <nav style={{ background: "#fff" }}>
+                <div className="nav-wrapper white" style={{ maxWidth: '1054px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    <Link to={state ? "/" : "/signin"} className="brand-logo">Let's Mingle</Link>
+                    <ul id="nav-mobile" className="right">
+                        {renderList()}
                     </ul>
                 </div>
-                <div className="modal-footer">
+                <div id="modal1" className="modal myModal" ref={searchModal} style={{ color: "black" }}>
+                    <div className="close">
+                        <button className="modal-close waves-effect waves-green btn-flat" onClick={() => setSearch('')}>close</button>
+                        
+                    </div>
+                    <div className="modal-content " style={{ background: '#fff' }}>
+                        <input
+                            type="text"
+                            placeholder="search users"
+                            value={search}
+                            onChange={(e) => fetchUsers(e.target.value.toLowerCase())}
+                        />
+                        <ul className="collection">
+                            {userDetails.map(item => {
+                                return <a href={item._id !== state._id ? "/profile/" + item._id : '/profile'} onClick={() => {
+                                    M.Modal.getInstance(searchModal.current).close()
+                                    setSearch('')
+                                }}><li className="collection-item">
+                                        <div className="row" key={item._id}>
+                                            <div className="col s5 m3"><img src={item.pic} className="postPicHeader" /></div>
+                                            <div className="col s7 m9 searchUser"><h5>{item.name}</h5></div>
+                                        </div>
+                                    </li>
+                                    {/* <div style={{border:'2px solid red'}}></div> */}
+                                </a>
+                            })}
+
+                        </ul>
+                    </div>
+                    {/* <div className="modal-footer">
                     <button className="modal-close waves-effect waves-green btn-flat" onClick={() => setSearch('')}>close</button>
+                </div> */}
                 </div>
-            </div>
-        </nav>
+            </nav>
         </div>
     );
 }

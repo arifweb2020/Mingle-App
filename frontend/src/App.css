@@ -212,9 +212,12 @@ width: 50px;
   font-weight: bold;
 }
 .page-footer{
-  background-color: #fff !important;
-
-  
+  background-color: #fff !important;  
+}
+.close{
+  display: flex;
+  justify-content: flex-end;
+  background: #fff;
 }
 .cp{
   color: black;

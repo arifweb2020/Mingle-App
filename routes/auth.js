@@ -58,7 +58,7 @@ router.post('/signup', (req, res) => {
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
   <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
-  <title>Announcing New Website, New Brand</title>
+  <title>Mingle App | Signup Successfully</title>
 
   <style type="text/css">
 body {

@@ -8,7 +8,15 @@ const Reset = (props) => {
     const [email, setEmail] = useState("")
     const PostData = () => {
         if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-            M.toast({ html: "invalid email", classes: "#c62828 red darken-3" })
+            //M.toast({ html: "invalid email", classes: "#c62828 red darken-3" })
+            toast.error("enter valid email", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                progress: undefined,
+                pauseOnHover: false,
+            })
             return
         }
         fetch('/reset-password', {
