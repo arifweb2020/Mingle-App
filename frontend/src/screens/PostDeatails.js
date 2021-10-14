@@ -1,15 +1,20 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import {Link} from 'react-router-dom';
+import { UserContext } from './../App'
 
 function PostDeatails(props) {
 
-    const { photo, body, comments, likes, title, postedBy } = props.location.state.userData
+    const { photo, body, comments, likes, title, postedBy  } = props.location.state.userData
+    const { state, dispatch } = useContext(UserContext)
 
     return (
         <div className="container" style={{ marginTop: '10px' }}>
             <div className="row">
                 <p><i className="material-icons pdi" onClick={() => props.history.goBack()}>arrow_back</i></p>
                 <div className="row">
-                    <div className="col s3 m1"><img src={postedBy.pic} className="postPicHeader" /></div>
+                    <div className="col s3 m1">
+                    <Link to={postedBy._id !== state._id ? "/profile/" + postedBy._id : "/profile"}>
+                        <img src={postedBy.pic} className="postPicHeader" /></Link></div>
                     <div className="col s9 m11"><span style={{ fontSize: '15px', textTransform: 'capitalize' }}>{title}</span></div>
                 </div>
                
@@ -28,7 +33,9 @@ function PostDeatails(props) {
                         <p className="paraBody">{body}</p>
                         <div className="comBody">{comments.map((c) => {
                             return <div key={c._id} className=" row">
-                                <div className="col s3 m2"><img src={c.postedBy.pic} className="postPicHeader" /></div>
+                                <div className="col s3 m2">
+                                <Link to={c.postedBy._id !== state._id ? "/profile/" + c.postedBy._id : "/profile"}>
+                                    <img src={c.postedBy.pic} className="postPicHeader" /></Link></div>
                                 <div className="col s9 m10"><span className="">{c.text}</span></div>
                             </div>
                         })}</div>

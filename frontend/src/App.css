@@ -25,6 +25,7 @@ a{
   transform: translateY(-10px);
   cursor: pointer;
   transition: transform 125ms;
+  z-index: 9999;
 }
 .commentBox::-webkit-scrollbar {
   width: 4px !important;
