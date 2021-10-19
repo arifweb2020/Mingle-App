@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import PostDeatails from './screens/PostDeatails';
 import Reset from './screens/Reset';
 import NewPassword from './screens/NewPassword';
+import UpdatePost from './screens/UpdatePost';
 
 export const UserContext = createContext()
 
@@ -41,6 +42,7 @@ const Routing = () => {
       <Route path="/profile/:userid" component={UserProfile} />
       <Route path="/postDetails/:id" component={PostDeatails} />
       <Route path="/followingPost" component={SubscribesUserPosts} />
+      <Route path="/updatePost/:postId" component={UpdatePost} />
       <Route exact path="/reset-password" component={Reset} />
 	  <Route path="/reset-password/:token" component={NewPassword} />
     </Switch>

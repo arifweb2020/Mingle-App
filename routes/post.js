@@ -24,6 +24,16 @@ router.post('/createpost',requireLogin,(req,res)=>{
     })
 })
 
+router.patch('/createpost/:pid',requireLogin,(req,res)=>{
+Post.findByIdAndUpdate(req.params.pid,req.body, (err,emp)=>{
+    if (err) {
+      return res.status(500).send({error: "problem with updating the post"})
+    };
+    res.send({success: "Updation successfull"});
+  })
+})
+
+
 router.get('/getsubpost',requireLogin,(req,res)=>{
 
     // if postedBy in following

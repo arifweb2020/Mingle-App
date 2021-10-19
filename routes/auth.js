@@ -50,7 +50,7 @@ router.post('/signup', (req, res) => {
                         .then(user => {
 							transporter.sendMail({
 								to:user.email,
-								from:"admin@skyfillconsulting.com",
+								from:"letsmingle@admissioncares.com",
 								subject:"signup successfully with Let's Mingle",
 								html:`<html lang="en">
 <head>
@@ -334,9 +334,9 @@ router.post('/reset-password',(req,res)=>{
 			user.save().then((result)=>{
 				transporter.sendMail({
 								to:user.email,
-								from:"admin@skyfillconsulting.com",
+								from:"letsmingle@admissioncares.com",
 								subject:"Reset Your Password",
-								html:`<h2>reset your Let's Mingle password</h2>
+								html:`<h2>Reset your LetsMingle password</h2>
 								<p>click to this <a href="${EMAIL}/reset-password/${token}"> click here </a> to reset your password</p>
 								`
 								
