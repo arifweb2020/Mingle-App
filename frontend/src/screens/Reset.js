@@ -65,7 +65,7 @@ const Reset = (props) => {
                 <h2>Let's Mingle</h2>
                 <input
                     type="text"
-                    placeholder="email"
+                    placeholder="enter your register email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
