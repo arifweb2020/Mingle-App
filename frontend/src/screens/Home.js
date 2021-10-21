@@ -133,7 +133,6 @@ function Home(props) {
                     data.map(item => {
                         return (
                             <div className="card home-card" key={item._id}>
-
                                 {/* {moment(tip.createdAt).format("Do MMM")} */}
                                 <h5 style={{ padding: "5px" }}><Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>
                                     <img src={item.postedBy.pic} className="postPicHeader" />  <span style={{ position: 'relative', top: '-20px', textTransform: 'capitalize' }}> {item.postedBy.name} </span>  </Link>

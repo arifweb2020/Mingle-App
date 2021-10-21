@@ -6,7 +6,7 @@ function UserProfile(props) {
     const [userProfile, setProfile] = useState(null)
     const { state, dispatch } = useContext(UserContext)
     const { userid } = useParams()
-    const [showfollow, setShowFollow] = useState(state ? !state.following?.includes(userid) : true)
+    const [showfollow, setShowFollow] = useState(state ? !state.following?.includes(userid) : false)
     // const [image,setImage] = useState("")
     useEffect(() => {
         fetch(`/user/${userid}`, {
