@@ -5,6 +5,7 @@ import moment from "moment";
 
 const SubscribesUserPosts  = ()=>{
     const [data,setData] = useState([])
+    const [loader, setLoader] = useState(true);
     const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
        fetch('/getsubpost',{
@@ -13,8 +14,9 @@ const SubscribesUserPosts  = ()=>{
            }
        }).then(res=>res.json())
        .then(result=>{
-           console.log(result)
+          // console.log(result)
            setData(result.posts)
+           setLoader(false);
        })
     },[])
 
@@ -111,6 +113,8 @@ const SubscribesUserPosts  = ()=>{
             setData(newData)
         })
     }
+    if (loader) return <h2 style={{ textAlign: 'center', marginTop: '220px', fontSize: '30px' }}>loading...!</h2>
+
    return (
        <div className="home">
            {

@@ -91,7 +91,7 @@ function Navbar(props) {
                         />
                         <ul className="collection">
                             {userDetails.map(item => {
-                                return <a href={item._id !== state._id ? "/profile/" + item._id : '/profile'} onClick={() => {
+                                return <a href={item?._id !== state?._id ? "/profile/" + item?._id : '/profile'} onClick={() => {
                                     M.Modal.getInstance(searchModal.current).close()
                                     setSearch('')
                                 }}><li className="collection-item">

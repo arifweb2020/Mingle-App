@@ -212,7 +212,8 @@ img[class="image"] {
   </tr>
   <tr>
     <td class="content-wrapper" style="padding-left:24px;padding-right:24px;text-align: center;">
-      <p style="text-transform:uppercase;font-family:sans-serif;font-size: 24px !important;margin-top: 15px; margin-bottom: 15px;">Welcome to Let's Mingle</p> 
+    <p style="text-transform:capitalize;font-family:sans-serif;font-size: 24px !important;margin-top: 15px; margin-bottom: 15px;">Hii, ${user.name}</p>
+      <p style="text-transform:uppercase;font-family:sans-serif;font-size: 20px !important;margin-top: 15px; margin-bottom: 15px;">Welcome to Let's Mingle</p> 
       <p style="font-family:sans-serif;font-size: 14px !important;margin-top: 15px; margin-bottom: 15px;line-height: 1.4 !important;">You are successfully signup with Let's Mingle,</p> 
       <p style="font-family:sans-serif;font-size: 14px !important;margin-top: 15px; line-height: 1.4;">We are very happy to have you with us. Here is a little more information<br> about who we are, and a few links about our story and success cases.<br> We hope you find good friends in our social networking site what you are looking for.</p><br>
       
@@ -496,7 +497,9 @@ router.post('/reset-password', (req, res) => {
               </tr>
               <tr>
                 <td class="content-wrapper" style="padding-left:24px;padding-right:24px;text-align: center;">
-                  <p style="text-transform:uppercase;font-family:sans-serif;font-size: 24px !important;margin-top: 15px; margin-bottom: 15px;">Reset Your Password</p> 
+                <p style="text-transform:capitalize;font-family:sans-serif;font-size: 24px !important;margin-top: 15px; margin-bottom: 15px;">Hii, ${user.name}</p> 
+                  
+                  <p style="text-transform:uppercase;font-family:sans-serif;font-size: 20px !important;margin-top: 15px; margin-bottom: 15px;"> Reset Your Password</p> 
                   
                   <p style="font-family:sans-serif;font-size: 16px !important;margin-top: 15px; line-height: 1.4;">to create new password <a href="${EMAIL}/reset-password/${token}"> click here. </a> </p><br>
                   
