@@ -120,7 +120,7 @@ const SubscribesUserPosts  = ()=>{
            {data ? (
            <>
            {
-               data.map(item=>{
+               data?.map(item=>{
                    return(
                        <div className="card home-card" key={item._id}>
                             <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>
@@ -157,10 +157,10 @@ const SubscribesUserPosts  = ()=>{
                                 <p style={{marginTop:'10px'}}><span style={{color:'#9c27b0',fontWeight:'bold'}}>Total Comments </span> : {item.comments.length}</p>
                                 <div className="commentBox" >
                                 {
-                                    item.comments.map(record=>{
+                                    item.comments?.map(record=>{
                                         return(
                                             <div className="row" style={{marginTop:'15px'}} key={record._id}>
-                                            <div className="col s3 m2"><Link to={record.postedBy._id !== state._id ? "/profile/" + record.postedBy._id : "/profile"}><img src={record.postedBy.pic} className="postPicHeader"/></Link></div>
+                                            <div className="col s3 m2"><Link to={record.postedBy?._id !== state._id ? "/profile/" + record?.postedBy?._id : "/profile"}><img src={record.postedBy?.pic} className="postPicHeader"/></Link></div>
                                                             <div className="col s9 m10"><span style={{fontSize:'15px'}}>{record.text}</span></div>
                                                                  
                                                         </div>
