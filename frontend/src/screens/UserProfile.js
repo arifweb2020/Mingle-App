@@ -97,16 +97,16 @@ function UserProfile(props) {
                         }}>
                             <div>
                                 <img className="profilePic"
-                                    src={userProfile.user.pic}
+                                    src={userProfile.user?.pic}
                                 />
                             </div>
                             <div className="profileDiv">
-                                <h4 style={{textTransform:'capitalize'}}>{userProfile.user.name}</h4>
-                                <h5>{userProfile.user.email}</h5>
+                                <h4 style={{textTransform:'capitalize'}}>{userProfile.user?.name}</h4>
+                                <h5>{userProfile.user?.email}</h5>
                                 <div style={{ display: "flex", justifyContent: "space-between", width: "108%" }}>
                                     <h6>{userProfile.posts?.length} posts</h6>
-                                    <h6>{userProfile.user.followers?.length} followers</h6>
-                                    <h6>{userProfile.user.following?.length} following</h6>
+                                    <h6>{userProfile.user?.followers?.length} followers</h6>
+                                    <h6>{userProfile.user?.following?.length} following</h6>
                                 </div>
                                 {showfollow ?
                                     <button style={{
@@ -142,7 +142,7 @@ function UserProfile(props) {
                     </div>
                     <div class="row">
                         {
-                            userProfile.posts.map(item => {
+                            userProfile.posts?.map(item => {
                                 return (
 
                                     <div className="col s12 m4" key={item._id}>
