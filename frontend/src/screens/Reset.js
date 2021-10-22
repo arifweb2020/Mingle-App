@@ -60,6 +60,7 @@ const Reset = (props) => {
     }
     return (
         <div className="mycard">
+            <img src="https://thefacevalue.in/img/ma-bg.jpg" className="bgImg" style={{height:'450px',width:'500px',left:'14%'}}/>
             <p style={{maxWidth:'420px',marginLeft:'auto',marginRight:'auto'}}><i className="material-icons pdi" onClick={() => props.history.goBack()}>arrow_back</i></p>
             <div className="card auth-card input-field">
                 <h2>Let's Mingle</h2>

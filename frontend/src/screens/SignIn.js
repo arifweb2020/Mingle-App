@@ -61,7 +61,7 @@ function SignIn(props) {
                         progress: undefined,
                         pauseOnHover: false,
                     })
-                   
+
                 }
             }).catch(err => {
                 console.log(err)
@@ -69,6 +69,7 @@ function SignIn(props) {
     }
     return (
         <div className="mycard">
+            <img src="https://thefacevalue.in/img/ma-bg2.png" className="bgImg" />  
             <div className="card auth-card input-field">
                 <h2>Let's Mingle</h2>
                 <input
@@ -92,8 +93,8 @@ function SignIn(props) {
                     <Link to="/signup">Dont have an account ?</Link>
                 </h5>
                 <p>
-              <Link to="/reset-password" style={{color:'#673ab7 !important'}}>Forgot password ?</Link>
-          </p>
+                    <Link to="/reset-password" style={{ color: '#673ab7 !important' }}>Forgot password ?</Link>
+                </p>
 
             </div>
             <ToastContainer
@@ -104,7 +105,7 @@ function SignIn(props) {
                 closeOnClick={true}
                 rtl={false}
             />
-            <h6 className="developer">Made By <i class="material-icons" style={{color:'red',position:'relative',top:'5px'}}>favorite</i> Arif Hussain</h6>
+            <h6 className="developer">Made By <i class="material-icons" style={{ color: 'red', position: 'relative', top: '5px' }}>favorite</i> Arif Hussain</h6>
         </div>
     );
 }

@@ -98,6 +98,7 @@ const Signup = () => {
 
     return (
         <div className="mycard">
+            <img src="https://thefacevalue.in/img/ma-bg2.png" className="bgImg" />
             <div className="card auth-card input-field">
                 <h2>Let's Mingle</h2>
                 <input
