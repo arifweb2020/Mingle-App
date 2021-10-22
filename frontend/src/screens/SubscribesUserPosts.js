@@ -117,7 +117,7 @@ const SubscribesUserPosts  = ()=>{
 
    return (
        <div className="home">
-           {data === true ? (
+           {data ? (
            <>
            {
                data.map(item=>{
