@@ -117,6 +117,8 @@ const SubscribesUserPosts  = ()=>{
 
    return (
        <div className="home">
+           {data === true ? (
+           <>
            {
                data.map(item=>{
                    return(
@@ -178,6 +180,11 @@ const SubscribesUserPosts  = ()=>{
                    )
                })
            }
+           </>
+           ): <h5 style={{textAlign:'center',marginTop:'30px'}}>Sorry You are not following any one yet</h5>
+           }
+
+           
           <p className="mTop" ><i class="material-icons" onClick={()=>window.scroll(0,0)} title="move top" style={{fontSize:'30px'}}>arrow_upward</i></p>
           
        </div>

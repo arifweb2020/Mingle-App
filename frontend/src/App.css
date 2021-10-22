@@ -16,6 +16,9 @@ a{
 ::-webkit-scrollbar-thumb {
   background:black;
 }
+nav ul a{
+  font-size: 20px !important;
+}
 .commentBox{
   overflow-y: auto;
   min-height: 10px;
@@ -24,7 +27,6 @@ a{
 .postPicHeader:hover{
   transform: translateY(-10px);
   cursor: pointer;
-  transition: transform 125ms;
   z-index: 9999;
 }
 .commentBox::-webkit-scrollbar {
@@ -176,6 +178,11 @@ a{
   /* margin: 10px auto; */
   margin-right: auto;
     margin-left: 650px;
+    transition:all linear 1s;
+}
+.auth-card:hover{
+  transform: translateY(-10px) ;
+  cursor: pointer;
 }
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #3f51b5 !important;
@@ -211,6 +218,7 @@ a{
   width:160px;
   height:160px;
   border-radius: 80px;
+  box-shadow: 6px 4px 5px #aaaaaa;
 }
 .date_time{
   position: absolute;
@@ -236,6 +244,8 @@ a{
   width: 50px;
   height: 50px;
   border-radius: 40px;
+  box-shadow: 4px 4px 5px #aaaaaa;
+  transition: all linear 1s;
 }
 .material-icons:hover{
   cursor: pointer;
