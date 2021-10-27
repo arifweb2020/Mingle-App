@@ -145,7 +145,7 @@ function Home(props) {
                                         >delete</i>
 
                                     }
-                                    {/* {item.postedBy._id == state._id
+                                    {item.postedBy._id == state._id
                                         &&
                                         <Link to={`/updatePost/${item._id}`}>
                                         <i className="material-icons" style={{
@@ -155,7 +155,7 @@ function Home(props) {
 
                                         >border_color</i></Link>
 
-                                    } */}
+                                    }
                                 </h5>
                                 <div className="card-image">
                                     <img src={item.photo} />

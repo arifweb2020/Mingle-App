@@ -42,7 +42,7 @@ const Routing = () => {
       <Route path="/profile/:userid" component={UserProfile} />
       <Route path="/postDetails/:id" component={PostDeatails} />
       <Route path="/followingPost" component={SubscribesUserPosts} />
-      <Route path="/updatePost/:postId" component={UpdatePost} />
+      <Route path="/updatePost/:id" component={UpdatePost} />
       <Route exact path="/reset-password" component={Reset} />
 	  <Route path="/reset-password/:token" component={NewPassword} />
     </Switch>

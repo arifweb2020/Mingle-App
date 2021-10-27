@@ -24,13 +24,28 @@ router.post('/createpost',requireLogin,(req,res)=>{
     })
 })
 
-router.patch('/createpost/:pid',requireLogin,(req,res)=>{
-Post.findByIdAndUpdate(req.params.pid,req.body, (err,emp)=>{
-    if (err) {
-      return res.status(500).send({error: "problem with updating the post"})
-    };
-    res.send({success: "Updation successfull"});
-  })
+router.put('/allpost/:id',requireLogin, async (req,res)=>{
+
+    const { title , body , photo} = req.body;
+
+    const mypost = await Post.findById({_id:req.params.id});
+  
+    if (mypost.postedBy._id.toString() !== req.user._id.toString()) {
+      res.status(401);
+      throw new Error("You can't perform this action");
+    }
+  
+    if (mypost) {
+      mypost.title = title;
+      mypost.body = body;
+      mypost.photo = photo;
+  
+      const updatedmypost = await mypost.save();
+      res.json(updatedmypost);
+    } else {
+      res.status(404);
+      throw new Error("mypost not found");
+    }
 })
 
 
@@ -74,6 +89,26 @@ router.get('/allpost',requireLogin,(req,res)=>{
     }).catch(err=>{
         console.log(err)
     })
+})
+
+router.get('/allpost/:id',requireLogin,(req,res)=>{
+    Post.findOne({_id:req.params.id})
+    //.populate("postedBy","_id name pic")
+   // .populate("comments.postedBy","_id name")
+    //.populate("comments.postedBy","_id name pic")
+    //.sort('-createdAt')
+   .then((posts)=>{
+       res.json({posts})
+   }).catch(err=>{
+       console.log(err)
+   })  
+    // const mypost = Post.findOne((n)=> n._id === req.params.id)
+
+    // res.send(mypost)
+
+    // const mypost = Post.findOne({_id:req.params.id})
+
+    // res.send(mypost)
 })
 
 router.put('/like',requireLogin,(req,res)=>{
